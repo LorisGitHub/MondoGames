@@ -14,6 +14,13 @@
         active = value;
         myDrawerOpen = false;
     }
+
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js');
+        });
+    }
+
 </script>
 
 <div class="top-app-bar-container flexor">

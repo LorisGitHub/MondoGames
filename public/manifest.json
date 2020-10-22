@@ -1,0 +1,18 @@
+{
+  "short_name": "MG",
+  "name": "Mondo Games",
+  "lang": "en",
+  "description": "Gaming and Community oriented web site",
+  "background_color": "#00aae7",
+  "theme_color": "#00aae7",
+  "dir": "ltr",
+  "display": "standalone",
+  "orientation": "any",
+  "icons": [
+    {
+      "src":"https://abs.twimg.com/responsive-web/client-web/icon-default.3c3b2245.png",
+      "sizes":"192x192",
+      "type":"image/png"
+    }
+  ]
+}

@@ -1,4 +1,3 @@
-// Components
 import Home from './components/Home.svelte'
 import Name from './components/Name.svelte'
 import Wild from './components/Wild.svelte'
