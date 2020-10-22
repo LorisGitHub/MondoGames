@@ -66,9 +66,9 @@
     </div>
     <ul class="app-navbar">
         <li><a href="#/friends"><IconButton class="material-icons white m-0">people</IconButton></a></li>
-        <li><a href="#/hello/svelte"><IconButton class="material-icons white m-0">star</IconButton></a></li>
+        <li><a href="#/leaderboard"><IconButton class="material-icons white m-0">star</IconButton></a></li>
         <li><a href="#/"><IconButton class="material-icons white m-0">home</IconButton></a></li>
-        <li><a href="#/does/not/exist"><IconButton class="material-icons white m-0">shopping_cart</IconButton></a></li>
-        <li><a href="#/wild/card"><IconButton class="material-icons white m-0">map</IconButton></a></li>
+        <li><a href="#/shop"><IconButton class="material-icons white m-0">shopping_cart</IconButton></a></li>
+        <li><a href="#/map"><IconButton class="material-icons white m-0">map</IconButton></a></li>
     </ul>
 </div>

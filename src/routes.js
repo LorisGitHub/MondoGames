@@ -1,17 +1,19 @@
-import Home from './components/Home.svelte'
-import Name from './components/Name.svelte'
+import Home from './components/home/Home.svelte'
+import Map from './components/map/MapPage.svelte'
+import Leaderboard from './components/leaderboards/LeaderboardPage.svelte'
+import Shop from './components/shop/ShopPage.svelte'
 import Wild from './components/Wild.svelte'
 import NotFound from './components/NotFound.svelte'
-import Friends from './components/Friends.svelte'
+import Friends from './components/friends/Friends.svelte'
 
-// Export the route definition object
 export default {
+
     // Exact path
     '/': Home,
+    '/map': Map,
     '/friends': Friends,
-
-    // Using named parameters, with last being optional
-    '/hello/:first/:last?': Name,
+    '/leaderboard': Leaderboard,
+    '/shop': Shop,
 
     // Wildcard parameter
     // Included twice to match both `/wild` (and nothing after) and `/wild/*` (with anything after)
