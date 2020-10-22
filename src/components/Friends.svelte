@@ -3,13 +3,30 @@
     import Button, {Label} from '@smui/button';
     import IconButton, {Icon} from '@smui/icon-button';
     import List, {Item, Text} from '@smui/list';
+    // import {Friend} from '../models/app-model'
 
     let clicked = 0;
+/*    let friends: Friend = [
+        {
+            nom: 'Florian',
+            prenom: 'Gerard',
+            ddn: new Date(),
+        }
+    ];*/
 
     function doAction(action) {
         alert('You did an action: ' + action);
     }
 </script>
+
+<Content component={List}>
+    {#each [...Array(6)].map((v, i) => i + 1) as item}
+        <Item on:click={() => clicked++}>
+            <Text>Item #{item}</Text>
+        </Item>
+    {/each}
+</Content>
+
 
 <Card class="w100">
     <PrimaryAction class="h100" on:click={() => doAction('openItemPage')}>

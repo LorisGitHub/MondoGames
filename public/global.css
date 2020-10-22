@@ -70,7 +70,7 @@ button:focus {
 	justify-content: space-evenly;
 	padding: 0;
 	margin: 0;
-	background-color: darkgray;
+	background-color: black;
 }
 
 .top-app-bar-container {
@@ -92,10 +92,32 @@ button:focus {
 	flex-grow: 1;
 	overflow: auto;
 	padding: 10px;
+	background-color: #f2f2f2;
+	height: calc(100vh - 126px);
+}
+
+.app-bg-color{
+	background-color: #f2f2f2;
+}
+
+.w100{
+	width: 100% !important;
+}
+
+.h100{
+	height: 100% !important;
 }
 
 .m-0{
 	margin: 0 !important;
+}
+
+.mt-10{
+	margin-top: 10px !important;
+}
+
+.mb-10{
+	margin-bottom: 10px !important;
 }
 
 .p-0{

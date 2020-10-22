@@ -17,7 +17,7 @@
 </script>
 
 <div class="top-app-bar-container flexor">
-    <Drawer variant="dismissible" style="width: 80%" bind:this={myDrawer} bind:open={myDrawerOpen}>
+    <Drawer variant="modal" style="width: 80%" bind:this={myDrawer} bind:open={myDrawerOpen}>
         <Header>
             <Title>Super Drawer</Title>
         </Header>
@@ -41,7 +41,8 @@
             </List>
         </Content>
     </Drawer>
-    <TopAppBar variant="static" color='primary'>
+    <Scrim/>
+    <TopAppBar variant="static" color='secondary'>
         <Row>
             <Section>
                 <IconButton on:click={() => myDrawerOpen = !myDrawerOpen} class="material-icons m-0">menu</IconButton>
@@ -57,10 +58,10 @@
         <Router {routes} />
     </div>
     <ul class="app-navbar">
-        <li><a href="#/"><IconButton class="material-icons white m-0">people</IconButton></a></li>
-        <li><a href="#/hello/svelte"><IconButton class="material-icons white m-0">T</IconButton></a></li>
-        <li><a href="#/wild/card"><IconButton class="material-icons white m-0">home</IconButton></a></li>
+        <li><a href="#/friends"><IconButton class="material-icons white m-0">people</IconButton></a></li>
+        <li><a href="#/hello/svelte"><IconButton class="material-icons white m-0">star</IconButton></a></li>
+        <li><a href="#/"><IconButton class="material-icons white m-0">home</IconButton></a></li>
         <li><a href="#/does/not/exist"><IconButton class="material-icons white m-0">shopping_cart</IconButton></a></li>
-        <li><a href="#/hello/svelte"><IconButton class="material-icons white m-0">map</IconButton></a></li>
+        <li><a href="#/wild/card"><IconButton class="material-icons white m-0">map</IconButton></a></li>
     </ul>
 </div>
