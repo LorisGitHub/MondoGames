@@ -1,11 +1,11 @@
 <script lang="ts">
-	let name = 'world';
     import routes from './routes'
     import Router from 'svelte-spa-router'
     import TopAppBar, {Row, Section, Title} from '@smui/top-app-bar'
     import IconButton from '@smui/icon-button'
     import Drawer, {AppContent, Content, Header, Subtitle, Scrim} from '@smui/drawer';
     import List, {Item, Text, Graphic, Separator, Subheader} from '@smui/list';
+
     let myDrawer;
     let myDrawerOpen = false;
     let active = 'Gray Kittens';
@@ -25,25 +25,28 @@
 
 <div class="top-app-bar-container flexor">
     <Drawer variant="modal" style="width: 80%" bind:this={myDrawer} bind:open={myDrawerOpen}>
-        <Header>
-            <Title>Super Drawer</Title>
+        <Header class="flex-center">
+            <Title class="p-0"><IconButton style="width: auto; font-size: 66px" class="material-icons mt-20">account_circle</IconButton></Title>
         </Header>
         <Content>
             <List>
-                <Item href="javascript:void(0)" on:click={() => setActive('Gray Kittens')} activated={active === 'Gray Kittens'}>
-                    <Text>Gray Kittens</Text>
+                <Item href="javascript:void(0)" on:click={() => setActive('profile')} activated={active === 'profile'}>
+                    <Text>My profile</Text>
                 </Item>
-                <Item href="javascript:void(0)" on:click={() => setActive('A Space Rocket')} activated={active === 'A Space Rocket'}>
-                    <Text>A Space Rocket</Text>
+                <Item href="javascript:void(0)" on:click={() => setActive('games')} activated={active === 'games'}>
+                    <Text>My games</Text>
                 </Item>
-                <Item href="javascript:void(0)" on:click={() => setActive('100 Pounds of Gravel')} activated={active === '100 Pounds of Gravel'}>
-                    <Text>100 Pounds of Gravel</Text>
+                <Item href="javascript:void(0)" on:click={() => setActive('friends')} activated={active === 'friends'}>
+                    <Text>My friends</Text>
                 </Item>
-                <Item href="javascript:void(0)" on:click={() => setActive('All of the Shrimp')} activated={active === 'All of the Shrimp'}>
-                    <Text>All of the Shrimp</Text>
+                <Item href="javascript:void(0)" on:click={() => setActive('events')} activated={active === 'events'}>
+                    <Text>My events</Text>
                 </Item>
-                <Item href="javascript:void(0)" on:click={() => setActive('A Planet with a Mall')} activated={active === 'A Planet with a Mall'}>
-                    <Text>A Planet with a Mall</Text>
+                <Item href="javascript:void(0)" on:click={() => setActive('groups')} activated={active === 'groups'}>
+                    <Text>My groups</Text>
+                </Item>
+                <Item href="javascript:void(0)" on:click={() => setActive('achievements')} activated={active === 'achievements'}>
+                    <Text>My achievements</Text>
                 </Item>
             </List>
         </Content>

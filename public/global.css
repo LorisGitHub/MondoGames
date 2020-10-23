@@ -112,6 +112,14 @@ button:focus {
 	margin: 0 !important;
 }
 
+.m-10{
+	margin: 10px !important;
+}
+
+.mt-20{
+	margin-top: 20px !important;
+}
+
 .mt-10{
 	margin-top: 10px !important;
 }
@@ -152,6 +160,12 @@ button:focus {
 	padding-bottom: 5px !important;
 }
 
+.flex-center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .white{
 	color: white !important;
 }
@@ -167,27 +181,7 @@ button:focus {
 	overflow: overlay;
 }
 
-.round-border{
-	border: 1px solid black !important;
+.round-border {
+	border: 1px solid darkgray !important;
 	border-radius: 25px;
-}
-
-.swiper-slide {
-	text-align: center;
-	font-size: 18px;
-	background: #fff;
-
-	/* Center slide text vertically */
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	-webkit-justify-content: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	-webkit-align-items: center;
-	align-items: center;
 }

@@ -22,7 +22,7 @@
 <Content class="horizontal-list" component={List}>
     {#each [...Array(12)].map((v, i) => i + 1) as item}
         <div style="padding: 0 10px; text-align: center" on:click={() => clicked++}>
-            <IconButton class="round-border material-icons m-0">people</IconButton>
+            <IconButton class="round-border material-icons m-0">face</IconButton>
             <Text>Item #{item}</Text>
         </div>
     {/each}
@@ -31,7 +31,7 @@
 <Card class="w100 mt-10">
     <Content component={List} class="p-0">
         {#each [...Array(20)].map((v, i) => i + 1) as item}
-            <Item class="pb-5 pt-5" style="border-bottom: 1px solid" on:click={() => clicked++}>
+            <Item class="pb-5 pt-5" style="border-bottom: 1px solid lightgray" on:click={() => clicked++}>
                 <IconButton class="round-border material-icons m-0">people</IconButton>
                 <Text class="ml-10">Item #{item}</Text>
             </Item>
