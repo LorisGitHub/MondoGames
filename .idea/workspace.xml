@@ -10,17 +10,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac0e0364-c4bb-4fa1-a8a1-ac957edd268a" name="Default Changelist" comment="">
+    <list default="true" id="ac0e0364-c4bb-4fa1-a8a1-ac957edd268a" name="Default Changelist" comment="map and refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Friends.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/friends/Friends.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Name.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/leaderboards/LeaderboardPage.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/friends/Friends.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/friends/Friends.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/Home.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +89,8 @@
       <workItem from="1602694474386" duration="4075000" />
       <workItem from="1603375679642" duration="1596000" />
       <workItem from="1603377331890" duration="268000" />
-      <workItem from="1603377638766" duration="7802000" />
+      <workItem from="1603377638766" duration="8467000" />
+      <workItem from="1603458297927" duration="4518000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1602661366781</created>
@@ -131,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603381915061</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="map and refactor">
+      <created>1603385501630</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1603385501630</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,13 +158,14 @@
     <MESSAGE value="switch to typescript" />
     <MESSAGE value="first routes and overall layout" />
     <MESSAGE value="manifest, sw and favicon" />
-    <option name="LAST_COMMIT_MESSAGE" value="manifest, sw and favicon" />
+    <MESSAGE value="map and refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="map and refactor" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1603381914234">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1603462944533">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603381914234" />
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603462944533" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1602694259509">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -178,6 +182,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="257" width="737" height="526" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603377911737" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1603458575834">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603458575834" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1603376039202">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

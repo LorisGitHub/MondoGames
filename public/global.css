@@ -116,12 +116,40 @@ button:focus {
 	margin-top: 10px !important;
 }
 
+.mt-5{
+	margin-top: 5px !important;
+}
+
+.ml-10{
+	margin-left: 10px !important;
+}
+
 .mb-10{
 	margin-bottom: 10px !important;
 }
 
+.mb-5{
+	margin-bottom: 5px !important;
+}
+
+.mr-10{
+	margin-right: 10px !important;
+}
+
+.mr-5{
+	margin-right: 5px !important;
+}
+
 .p-0{
 	padding: 0 !important;
+}
+
+.pt-5{
+	padding-top: 5px !important;
+}
+
+.pb-5{
+	padding-bottom: 5px !important;
 }
 
 .white{
@@ -131,4 +159,35 @@ button:focus {
 .map {
 	width: 100%;
 	height: 100%;
+}
+
+.horizontal-list{
+	display: flex;
+	flex-flow: row;
+	overflow: overlay;
+}
+
+.round-border{
+	border: 1px solid black !important;
+	border-radius: 25px;
+}
+
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: #fff;
+
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
 }
