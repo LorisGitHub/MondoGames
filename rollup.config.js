@@ -59,7 +59,7 @@ export default {
 			browser: true,
 			dedupe: ['svelte']
 		}),
-		commonjs(),
+		commonjs({extensions: ['.js', '.ts']}),
 		postcss({
 			extract: true,
 			minimize: true,
@@ -73,8 +73,7 @@ export default {
 			]
 		}),
 		typescript({
-			sourceMap: !production,
-			inlineSources: !production
+			module: 'CommonJS',
 		}),
 
 		// In dev mode, call `npm run start` once
