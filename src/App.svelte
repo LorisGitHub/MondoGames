@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { onMount } from 'svelte';
+    import { games } from './stores';
     import routes from './routes'
     import Router from 'svelte-spa-router'
     import TopAppBar, {Row, Section, Title} from '@smui/top-app-bar'
@@ -10,7 +12,11 @@
     let myDrawerOpen = false;
     let active = 'Gray Kittens';
 
-
+    onMount(() => {
+        const res = fetch(`https://jsonplaceholder.typicode.com/photos?_limit=20`).then(value => {
+            console.log(value.json());
+        });
+    });
 
     function setActive(value) {
         active = value;

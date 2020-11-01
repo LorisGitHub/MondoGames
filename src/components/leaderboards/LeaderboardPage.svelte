@@ -1,7 +1,6 @@
 <script lang="ts">
-    import Card, {Content} from '@smui/card';
     import Button, {Group, Label} from '@smui/button';
-    import IconButton, {Icon} from '@smui/icon-button';
+    import Icon from '@smui/icon-button';
     import List, {Item, Text} from '@smui/list';
     import {Friend} from '../../models/app-model'
 
@@ -59,13 +58,13 @@
     ];
 </script>
 
-<Group class="header-button mb-10" variant="raised">
+<Group class="header-button mb-10 mt-10" variant="raised">
     <Button color='secondary' class="m-0" on:click={() => clicked++} variant="raised"><Label>World</Label></Button>
     <Button color='secondary' class="m-0" on:click={() => clicked++} variant="raised"><Label>Country</Label></Button>
     <Button color='secondary' class="m-0" on:click={() => clicked++} variant="raised"><Label>Regional</Label></Button>
 </Group>
 
-<Content component={List} class="p-0 ml-10">
+<List class="p-0 ml-10">
     {#each friends as friend, i}
         <Item class="w100" style="border-bottom: 1px solid lightgray; padding: 5px 0 5px;" on:click={() => clicked++}>
             <h2 class="mr-10" style="color: {i === 0 ? '#daa520': i === 1 ? '#C0C0C0': i === 2 ? '#B08D57':'black'}">{i+1}</h2>
@@ -78,4 +77,4 @@
             </div>
         </Item>
     {/each}
-</Content>
+</List>

@@ -12,7 +12,7 @@ body {
 }
 
 a {
-	color: rgb(0,100,200);
+	color: black;
 	text-decoration: none;
 }
 
@@ -21,7 +21,7 @@ a:hover {
 }
 
 a:visited {
-	color: rgb(0,80,160);
+	color: black;
 }
 
 label {
@@ -73,6 +73,31 @@ button:focus {
 	background-color: black;
 }
 
+.friend-chat-header{
+	display: flex !important;
+	position: sticky;
+	top: 0;
+	width: 100%;
+	text-align: center;
+	margin: 0;
+	background-color: white;
+	font-weight: bold;
+	z-index: 3;
+	box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+}
+
+.friend-chat-saisie{
+	display: flex;
+	position: sticky;
+	bottom: 0;
+	width: 100%;
+	padding: 10px 0 0;
+	margin: 0;
+	background-color: white;
+	box-shadow: 0px 5px 5px 5px rgba(0,0,0,.2);
+	border-radius: 5px;
+}
+
 .top-app-bar-container {
 	overflow: auto;
 	display: inline-block;
@@ -85,13 +110,13 @@ button:focus {
 	display: inline-flex;
 	flex-direction: column;
 	width: 100%;
+	height: 100%;
 }
 
 .flexor-content {
 	margin-bottom: 50px;
 	flex-grow: 1;
 	overflow: auto;
-	padding: 10px;
 	background-color: #f2f2f2;
 	height: calc(100vh - 126px);
 }
@@ -140,6 +165,10 @@ button:focus {
 	margin-left: 10px !important;
 }
 
+.ml-20{
+	margin-left: 20px !important;
+}
+
 .mb-10{
 	margin-bottom: 10px !important;
 }
@@ -148,12 +177,16 @@ button:focus {
 	margin-bottom: 5px !important;
 }
 
+.mr-5{
+	margin-right: 5px !important;
+}
+
 .mr-10{
 	margin-right: 10px !important;
 }
 
-.mr-5{
-	margin-right: 5px !important;
+.mr-20{
+	margin-right: 20px !important;
 }
 
 .p-0{
@@ -162,6 +195,10 @@ button:focus {
 
 .p-5{
 	padding: 5px !important;
+}
+
+.p-10{
+	padding: 10px !important;
 }
 
 .pt-5{
@@ -186,12 +223,17 @@ button:focus {
 	color: white !important;
 }
 
+.bg-lightblue{
+	background-color: lightblue !important;
+}
+
 .map {
 	width: 100%;
 	height: 100%;
 }
 
 .horizontal-list{
+	margin-top: 10px;
 	display: flex;
 	flex-flow: row;
 	overflow: overlay;

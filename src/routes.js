@@ -5,7 +5,8 @@ import Shop from './components/shop/ShopPage.svelte'
 import ShopItem from './components/shop/ShopItemPage.svelte'
 import Wild from './components/Wild.svelte'
 import NotFound from './components/NotFound.svelte'
-import Friends from './components/friends/Friends.svelte'
+import Friends from './components/friends/FriendsPage.svelte'
+import FriendChat from './components/friends/FriendChatPage.svelte'
 
 export default {
 
@@ -13,6 +14,7 @@ export default {
     '/': Home,
     '/map': Map,
     '/friends': Friends,
+    '/friend': FriendChat,
     '/leaderboard': Leaderboard,
     '/shop': Shop,
     '/shop/item': ShopItem,

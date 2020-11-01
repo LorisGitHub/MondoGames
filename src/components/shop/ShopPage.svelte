@@ -83,22 +83,24 @@
 
 </script>
 
-{#each gamesList as list}
-    <h3 class="m-0">{list.type}</h3>
-    <Content class="horizontal-list mb-10" component={List}>
-        {#each list.list as game}
-            <a href="#/shop/item">
-                <Card style="width: 100px; min-width: 100px; margin: 0 10px; height: fit-content; text-align: center" on:click={() => onSelectShopItem(game)}>
-                    <Media style="background-image: url({game.img});" aspectRatio="16x9">
-                    </Media>
-                    <Content style="padding: 5px; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
-                        {game.nom}<br>
-                        {game.price}€
-                    </Content>
-                </Card>
-            </a>
-        {/each}
-    </Content>
-{/each}
+<div class="p-10">
+    {#each gamesList as list}
+        <h3 class="m-0">{list.type}</h3>
+        <Content class="horizontal-list mb-10" component={List}>
+            {#each list.list as game}
+                <a href="#/shop/item">
+                    <Card style="width: 100px; min-width: 100px; margin: 0 10px; height: fit-content; text-align: center" on:click={() => onSelectShopItem(game)}>
+                        <Media style="background-image: url({game.img});" aspectRatio="16x9">
+                        </Media>
+                        <Content style="padding: 5px; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+                            {game.nom}<br>
+                            {game.price}€
+                        </Content>
+                    </Card>
+                </a>
+            {/each}
+        </Content>
+    {/each}
+</div>
 
 

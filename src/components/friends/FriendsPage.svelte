@@ -2,6 +2,7 @@
     import Card, {Content} from '@smui/card';
     import List, {Item, Text} from '@smui/list';
     import {Friend} from '../../models/app-model'
+    import {currentFriend} from '../../stores.js';
 
     let friends: Friend = [
         {
@@ -48,29 +49,32 @@
         }
     ];
 
-    function doAction(item) {
-        console.log(item);
+    function onSelectFriend(item: Friend) {
+        currentFriend.set(item);
     }
 </script>
 
 <Content class="horizontal-list" component={List}>
     {#each friends as friend}
-        <div style="padding: 0 10px; text-align: center" on:click={() => doAction(friend)}>
-<!--            <IconButton class="round-border material-icons m-0">face</IconButton>-->
-            <img class="round-border m-0" style="height: 50px" src="{friend.pp}"/>
-            <span style="font-size: 12px; font-weight: bold">{friend.pseudo}</span>
-            <span style="height: 10px; width: 10px; background-color: green; border-radius: 50%; position: relative; top: -84px; left: 45px; display: flex;"></span>
-        </div>
+        <a href="#/friend">
+            <div style="padding: 0 10px; text-align: center" on:click={() => onSelectFriend(friend)}>
+                <img class="round-border m-0" style="height: 50px" src="{friend.pp}"/>
+                <span style="font-size: 12px; font-weight: bold">{friend.pseudo}</span>
+                <span style="height: 10px; width: 10px; background-color: green; border-radius: 50%; position: relative; top: -84px; left: 45px; display: flex;"></span>
+            </div>
+        </a>
     {/each}
 </Content>
 
-<Card class="w100 mt-10">
+<Card class="w100">
     <Content component={List} class="p-0">
         {#each friends as friend}
-            <Item class="pb-5 pt-5" style="border-bottom: 1px solid lightgray" on:click={() => doAction(friend)}>
-                <img class="round-border m-0" style="height: 50px" src="{friend.pp}"/>
-                <span style="font-size: 12px;" class="ml-10">{friend.prenom} {friend.nom}</span><br>
-            </Item>
+            <a href="#/friend">
+                <Item class="pb-5 pt-5" style="border-bottom: 1px solid lightgray" on:click={() => onSelectFriend(friend)}>
+                    <img class="round-border m-0" style="height: 50px" src="{friend.pp}"/>
+                    <span style="font-size: 12px;" class="ml-10">{friend.prenom} {friend.nom}</span><br>
+                </Item>
+            </a>
         {/each}
     </Content>
 </Card>
