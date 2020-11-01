@@ -65,9 +65,9 @@
     <Button color='secondary' class="m-0" on:click={() => clicked++} variant="raised"><Label>Regional</Label></Button>
 </Group>
 
-<Content component={List} class="p-0">
+<Content component={List} class="p-0 ml-10">
     {#each friends as friend, i}
-        <Item class="pb-5 pt-5 w100" style="border-bottom: 1px solid lightgray" on:click={() => clicked++}>
+        <Item class="w100" style="border-bottom: 1px solid lightgray; padding: 5px 0 5px;" on:click={() => clicked++}>
             <h2 class="mr-10" style="color: {i === 0 ? '#daa520': i === 1 ? '#C0C0C0': i === 2 ? '#B08D57':'black'}">{i+1}</h2>
             <img class="round-border m-0" style="height: 50px" src="{friend.pp}"/>
             <div style="width: -webkit-fill-available">

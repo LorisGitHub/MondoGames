@@ -10,6 +10,8 @@
     let myDrawerOpen = false;
     let active = 'Gray Kittens';
 
+
+
     function setActive(value) {
         active = value;
         myDrawerOpen = false;
@@ -25,8 +27,11 @@
 
 <div class="top-app-bar-container flexor">
     <Drawer variant="modal" style="width: 80%" bind:this={myDrawer} bind:open={myDrawerOpen}>
-        <Header class="flex-center">
-            <Title class="p-0"><IconButton style="width: auto; font-size: 66px" class="material-icons mt-20">account_circle</IconButton></Title>
+        <Header class="flex-center p-0 mt-20">
+            <img class="round-border m-0" width="100px" src="https://cdn.discordapp.com/avatars/241989599470026765/0a2ba029253a2c04dc9a606d61fbd3ac.webp?size=128"/>
+<!--            <Row>
+                <span style="font-size: 12px; font-weight: bold">Cheadle</span>
+            </Row>-->
         </Header>
         <Content>
             <List>

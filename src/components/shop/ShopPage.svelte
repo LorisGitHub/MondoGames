@@ -1,9 +1,9 @@
 <script lang="ts">
     import Card, {Content, Media} from '@smui/card';
-    import IconButton, {Icon} from '@smui/icon-button';
-    import List, {Item, Text} from '@smui/list';
+    import List from '@smui/list';
     import {Game} from '../../models/app-model';
     import {GameType} from '../../models/app-enum';
+    import {currentGame} from '../../stores.js';
 
     let plateau: Game = [
         {
@@ -77,20 +77,26 @@
         }
     ];
 
+    function onSelectShopItem(item: Game){
+        currentGame.set(item);
+    }
+
 </script>
 
 {#each gamesList as list}
     <h3 class="m-0">{list.type}</h3>
     <Content class="horizontal-list mb-10" component={List}>
         {#each list.list as game}
-            <Card style="width: 100px; min-width: 100px; margin: 0 10px; height: fit-content; text-align: center">
-                <Media style="background-image: url({game.img});" aspectRatio="16x9">
-                </Media>
-                <Content style="padding: 5px; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
-                    {game.nom}<br>
-                    {game.price}€
-                </Content>
-            </Card>
+            <a href="#/shop/item">
+                <Card style="width: 100px; min-width: 100px; margin: 0 10px; height: fit-content; text-align: center" on:click={() => onSelectShopItem(game)}>
+                    <Media style="background-image: url({game.img});" aspectRatio="16x9">
+                    </Media>
+                    <Content style="padding: 5px; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+                        {game.nom}<br>
+                        {game.price}€
+                    </Content>
+                </Card>
+            </a>
         {/each}
     </Content>
 {/each}
