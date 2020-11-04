@@ -26,40 +26,46 @@
         {
             me: false,
             time: new Date(),
-            text: 'Salut ça va ?'
+            text: 'Bien et toi ?'
         },
         {
             me: true,
             time: new Date(),
-            text: 'Salut ça va ?'
+            text: 'Bien, merci'
         },
         {
             me: false,
             time: new Date(),
-            text: 'Salut ça va ?'
+            text: 'Ok'
         },
         {
             me: false,
             time: new Date(),
-            text: 'Salut ça va ?'
+            text: 'Grosse discussion'
         },
         {
             me: true,
             time: new Date(),
-            text: 'Salut ça va ?'
+            text: 'J\'avoue c\'est naze'
         },
         {
             me: false,
             time: new Date(),
-            text: 'Salut ça va ?'
+            text: 'Pire'
         },
         {
             me: true,
             time: new Date(),
-            text: 'Salut ça va ?'
+            text: 'Salut du coup'
         },
     ];
 
+    function getMessageDate(time: Date){
+        const jour = time.getDay()+1;
+        const month = time.getMonth()+1;
+        const year = time.getFullYear();
+        return `${jour}/${month}/${year}`;
+    }
 
 </script>
 
@@ -76,9 +82,9 @@
             {#each messages as message}
                 <div class="{message.me ? 'ml-20':'mr-20'}">
                     <Card class="{message.me ? 'bg-lightblue w100 mb-10':'w100 mb-10'}">
-                        <Item class="pb-5 pt-5" style="border-bottom: 1px solid lightgray; width: fit-content">
-                            <!--                    <img class="round-border m-0" style="height: 50px" src="{friend.pp}"/>-->
-                            <span style="font-size: 12px;" class="ml-10">{message.text}</span>
+                        <Item class="pb-5 pt-5" style="border-bottom: 1px solid lightgray; width: auto">
+                            <span style="position: absolute; font-style: italic; font-size: 10px; bottom: -4px; right: 4px;">{getMessageDate(message.time)}</span>
+                            <span style="font-size: 12px; font-family: cursive" class="ml-10">{message.text}</span>
                         </Item>
                     </Card>
                 </div>

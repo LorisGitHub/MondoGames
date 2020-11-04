@@ -15,6 +15,8 @@ export interface Friend extends Identifiable{
     nom: string,
     prenom: string,
     country?: string,
+    online: boolean,
+    point: number,
     ddn: Date,
     pp: string,
 }
