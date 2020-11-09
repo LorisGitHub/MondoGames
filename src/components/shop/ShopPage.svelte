@@ -1,9 +1,29 @@
 <script lang="ts">
     import Card, {Content, Media} from '@smui/card';
+    import Carousel from '@beyonk/svelte-carousel'
     import List from '@smui/list';
     import {Game} from '../../models/app-model';
     import {currentGame, games} from '../../stores.js';
     import { onMount } from 'svelte';
+
+    let carouselGames = [
+        {
+            name: 'The Crew',
+            img: 'https://cdn2.philibertnet.com/472228-medium_default/the-crew.jpg',
+        },
+        {
+            name: 'Trek 12',
+            img: 'https://cdn1.philibertnet.com/481271-medium_default/trek-12.jpg',
+        },
+        {
+            name: '7 Wonders Duel',
+            img: 'https://cdn1.philibertnet.com/480581-medium_default/7-wonders-duel-agora.jpg',
+        },
+        {
+            name: 'Paris 1889',
+            img: 'https://cdn1.philibertnet.com/481783-small_default/product-image.jpg',
+        },
+    ];
 
     let allGamesByType = [];
     let tmpList = [];
@@ -43,26 +63,40 @@
 
 </script>
 
-{#if allGamesByType && allGamesByType.length > 0}
-<div class="p-10">
-    {#each allGamesByType as list}
-        <h3 class="m-0">{list.type}</h3>
-        <List class="horizontal-list mb-10">
-            {#each list.list as game}
-                <a href="#/shop/item">
-                    <Card style="width: 100px; min-width: 100px; margin: 0 10px; height: fit-content; text-align: center" on:click={() => onSelectShopItem(game)}>
-                        <Media style="background-image: url({game.img});" aspectRatio="16x9">
-                        </Media>
-                        <Content style="padding: 5px; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
-                            {game.nom}<br>
-                            {game.price}€
-                        </Content>
-                    </Card>
-                </a>
+<div class="p-10 white">
+
+    <h3 style="margin: 0 0 10px 0">Jeux à la une !</h3>
+    <div style="border-bottom: 2px solid #018786; border-top: 2px solid #018786; padding: 10px; background: white;">
+        <Carousel controls="{false}" dots="{false}">
+            {#each carouselGames as carouselGame}
+                <div class="carousel-image-container bg-white col pb-5">
+                    <img src="{carouselGame.img}" class="carousel-image"/>
+    <!--                <span class="text-center" style>{carouselGame.name}</span>-->
+                </div>
             {/each}
-        </List>
-    {/each}
+        </Carousel>
+    </div>
+
+    <div class="mt-20">
+        {#each allGamesByType as list}
+            <h3 class="m-0">{list.type}</h3>
+            <List class="horizontal-list mb-10">
+                {#each list.list as game}
+                    <a href="#/shop/item">
+                        <Card style="width: 100px; min-width: 100px; margin: 0 20px 0 0; height: fit-content; text-align: center" on:click={() => onSelectShopItem(game)}>
+                            <Media style="background-image: url({game.img});" aspectRatio="16x9">
+                            </Media>
+                            <Content style="padding: 5px; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+                                {game.nom}<br>
+                                {game.price}€
+                            </Content>
+                        </Card>
+                    </a>
+                {/each}
+            </List>
+        {/each}
+    </div>
+
 </div>
-{/if}
 
 

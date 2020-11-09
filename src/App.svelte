@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import { logged, games, friends } from './stores';
+    import { logged, games, friends, events } from './stores';
     import routes from './routes'
     import Router from 'svelte-spa-router'
     import TopAppBar, {Row, Section, Title} from '@smui/top-app-bar'
@@ -22,48 +22,57 @@
                   price: 8,
                   type: GameType.Plateau,
                   img: 'https://images-na.ssl-images-amazon.com/images/I/81qy%2BMXuxDL._AC_SL1392_.jpg',
+                  desc: 'It\'s the fast-dealing property trading game where players buy, sell, dream and scheme their way to riches. This version of the Monopoly game welcomes the Rubber Ducky, Tyrannosaurus Rex, and Penguin into its family of tokens. Choose your token, place it on GO! and roll the dice to own it all! There can be only one winner in the Monopoly game. Will it be you?',
+                  rating: 4.5,
               },
               {
                   nom: 'Jeu de l\'oie',
                   price: 20,
                   type: GameType.Plateau,
                   img: 'https://www.regles-de-jeux.com/wp-content/uploads/2012/11/regle-jeu-oie.jpg',
+                  rating: 4.5,
               },
               {
                   nom: 'Cluedo',
                   price: 20,
                   type: GameType.Plateau,
                   img: 'https://www.espritjeu.com/upload/image/cluedo-p-image-60570-grande.jpg',
+                  rating: 4.5,
               },
               {
                   nom: 'La bonne paye',
                   price: 20,
                   type: GameType.Plateau,
                   img: 'https://images-na.ssl-images-amazon.com/images/I/91-j8eztdnL._AC_SL1500_.jpg',
+                  rating: 4.5,
               },
               {
                   nom: 'Uno',
                   price: 5,
                   type: GameType.Carte,
                   img: 'https://cdn-ext.fanatical.com/production/product/original/b2e25f5e-a2cf-4d10-8698-d445ecf6640e.jpeg?w=1200',
+                  rating: 4.5,
               },
               {
                   nom: 'Puissance 4',
                   price: 5,
                   type: GameType.Arcade,
                   img: 'https://www.ludifolie.com/14057-thickbox_default/puissance-4.jpg',
+                  rating: 4.5,
               },
               {
                   nom: 'Attrape fantôme',
                   price: 5,
                   type: GameType.Arcade,
                   img: 'https://images-na.ssl-images-amazon.com/images/I/91Itw5nGbtL._AC_SX679_.jpg',
+                  rating: 4.5,
               },
               {
                   nom: 'Jumanji',
                   price: 5,
                   type: GameType.Arcade,
                   img: 'https://lagranderecre-lagranderecre-fr-storage.omn.proximis.com/Imagestorage/images/0/0/5d4d393a8bc27_6045933_JEU_DE_PLATEAU_JUMANJI_EDITION_RETRO_PK1_855547_1_.jpg',
+                  rating: 4.5,
               },
           ]);
         friends.set([
@@ -128,6 +137,36 @@
                 ddn: new Date(),
             }
         ]);
+        events.set([
+            {
+                nom: 'Tournoi Uno',
+                desc: 'Tournoi 8 joueurs sur le jeu uno',
+                startDate: new Date(),
+                endDate: new Date(),
+                lat: 43.967911,
+                lon: 4.899947,
+                gameId: 6,
+            },
+            {
+                nom: 'Tournoi Monopoly',
+                desc: 'Tournoi 8 joueurs sur le jeu Monopoly',
+                startDate: new Date(),
+                endDate: new Date(),
+                lat: 43.8493,
+                lon: 4.8055,
+                gameId: 6,
+            },
+            {
+                nom: 'Tournoi Cluedo',
+                desc: 'Tournoi 8 joueurs sur le jeu Cluedo',
+                startDate: new Date(),
+                endDate: new Date(),
+                lat: 43.8493,
+                lon: 4.9565,
+                gameId: 6,
+            },
+        ]);
+
 
         // const res = fetch(`https://jsonplaceholder.typicode.com/photos?_limit=20`).then(value => {
         //     console.log(value.json());
@@ -149,6 +188,10 @@
     function setActive(value) {
         active = value;
         myDrawerOpen = false;
+    }
+
+    function goShop(){
+        window.location.href = '#/shop';
     }
 
     if ('serviceWorker' in navigator) {
@@ -191,7 +234,7 @@
         </Content>
     </Drawer>
     <Scrim/>
-    <TopAppBar variant="static" color='secondary'>
+    <TopAppBar variant="static" color='primary'>
         <Row>
             <Section>
                 <IconButton on:click={() => openDrawer()} class="material-icons m-0">menu</IconButton>
@@ -199,6 +242,7 @@
             </Section>
             <Section align="end" toolbar>
                 <IconButton class="material-icons m-0" aria-label="Download">search</IconButton>
+                <a href="#/signin"><IconButton class="material-icons m-0" aria-label="Login">account_circle</IconButton></a>
             </Section>
         </Row>
     </TopAppBar>

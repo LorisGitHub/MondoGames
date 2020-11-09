@@ -24,6 +24,7 @@
     "tslib": "^2.0.0"
   },
   "dependencies": {
+    "@beyonk/svelte-carousel": "^2.8.0",
     "@smui/button": "^1.0.0",
     "@smui/card": "^1.0.0",
     "@smui/drawer": "^1.0.0",

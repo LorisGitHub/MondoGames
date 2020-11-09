@@ -2,15 +2,16 @@
 
 ---
 
-# svelte app
+# Carousel bug fix
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
+Replace the detach function on line 174 of node_modules/svelte/internal/index.mjs with the following
 
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
-
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
+```
+function detach(node) {
+    if(node.parentNode){
+        node.parentNode.removeChild(node);
+    }
+}
 ```
 
 *Note that you will need to have [Node.js](https://nodejs.org) installed.*

@@ -23,12 +23,19 @@ export interface Friend extends Identifiable{
 
 export interface Game extends Identifiable{
     nom: string,
+    desc?: string,
+    rating?: number,
     price: number,
     type: string,
     img: string,
 }
 
-export interface Evenement extends Identifiable{
+export interface Event extends Identifiable{
     nom: string,
-    date: Date,
+    desc: string,
+    startDate: Date,
+    endDate: Date,
+    lon: number,
+    lat: number,
+    gameId: number,
 }

@@ -13,7 +13,13 @@ body {
 
 a {
 	color: black;
-	text-decoration: none;
+	outline: none;
+	text-decoration: none !important;
+	/*-webkit-tap-highlight-color: rgba(0, 0, 0, 1);*/
+}
+
+a.image-link:focus {
+	outline: none;
 }
 
 a:hover {
@@ -22,6 +28,7 @@ a:hover {
 
 a:visited {
 	color: black;
+	text-decoration: none !important;
 }
 
 label {
@@ -80,7 +87,7 @@ button:focus {
 	width: 100%;
 	text-align: center;
 	margin: 0;
-	background-color: white;
+	background-color: currentColor;
 	font-weight: bold;
 	z-index: 3;
 	box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
@@ -114,10 +121,11 @@ button:focus {
 }
 
 .flexor-content {
-	margin-bottom: 50px;
+	background: currentColor;
+	margin-bottom: 48px;
 	flex-grow: 1;
 	overflow: auto;
-	background-color: #f2f2f2;
+	/*background-color: #f2f2f2;*/
 	height: calc(100vh - 126px);
 }
 
@@ -125,16 +133,46 @@ button:focus {
 	background-color: #f2f2f2;
 }
 
+.row{
+	display: flex !important;
+	flex-flow: row !important;
+}
+
+.col{
+	display: flex !important;
+	flex-flow: column !important;
+}
+
 .w100{
 	width: 100% !important;
+}
+
+.w75{
+	width: 75% !important;
+}
+
+.w50{
+	width: 50% !important;
+}
+
+.w30{
+	width: 30% !important;
 }
 
 .h100{
 	height: 100% !important;
 }
 
+.h50{
+	height: 50% !important;
+}
+
 .m-0{
 	margin: 0 !important;
+}
+
+.m-5{
+	margin: 5px !important;
 }
 
 .m-10{
@@ -151,6 +189,10 @@ button:focus {
 
 .mt-20{
 	margin-top: 20px !important;
+}
+
+.mt-50{
+	margin-top: 50px !important;
 }
 
 .mt-5{
@@ -223,8 +265,20 @@ button:focus {
 	color: white !important;
 }
 
+.bg-white{
+	background-color: white !important;
+}
+
 .bg-lightblue{
 	background-color: lightblue !important;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.larger{
+	font-size: larger;
 }
 
 .map {
@@ -245,9 +299,31 @@ button:focus {
 	margin: 0 auto;
 }
 
+.carousel{
+	position: relative;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.carousel-image-container{
+	max-height: 130px !important;
+	width: auto !important;
+	display: flex;
+}
+
+.carousel-image{
+	width: -webkit-fill-available;
+}
+
 .round-border {
 	border: 1px solid darkgray !important;
 	border-radius: 25px;
+}
+
+.shop-item-title{
+	text-align: center;
+	text-decoration: underline;
 }
 
 .online-friend{
@@ -263,4 +339,9 @@ button:focus {
 	background-color: green;
 	border-radius: 50%;
 	display: inline-block;
+}
+
+.map-container{
+	margin: 10px;
+	height: 50%;
 }

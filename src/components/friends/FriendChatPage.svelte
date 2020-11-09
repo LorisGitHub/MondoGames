@@ -73,7 +73,7 @@
     <div class="friend-chat-header p-0">
         <Item class="w100 pb-5 pt-5">
             <img class="round-border m-0" style="height: 40px" src="{currentFriend_.pp}"/>
-            <span style="font-size: 12px;" class="ml-10">{currentFriend_.prenom} {currentFriend_.nom}</span><br>
+            <span style="font-size: 12px;" class="ml-10 white">{currentFriend_.prenom} {currentFriend_.nom}</span><br>
         </Item>
     </div>
 
