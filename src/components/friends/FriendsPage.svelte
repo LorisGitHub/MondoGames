@@ -43,6 +43,7 @@
 {/if}
 
 <List class="p-10">
+    <h4 style="margin: 0" class="text-center white">Latest messages</h4>
     {#each allFriends as friend}
         <a href="#/friend">
             <Card class="p-5 mt-5 row" style="border-bottom: 1px solid lightgray" on:click={() => onSelectFriend(friend)}>
