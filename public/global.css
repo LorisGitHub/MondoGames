@@ -147,6 +147,10 @@ button:focus {
 	width: 100% !important;
 }
 
+.w90{
+	width: 90% !important;
+}
+
 .w75{
 	width: 75% !important;
 }
@@ -307,7 +311,6 @@ button:focus {
 }
 
 .carousel-image-container{
-	max-height: 130px !important;
 	width: auto !important;
 	display: flex;
 }

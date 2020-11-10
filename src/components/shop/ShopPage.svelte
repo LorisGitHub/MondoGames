@@ -69,7 +69,7 @@
     <div style="border-bottom: 2px solid #018786; border-top: 2px solid #018786; padding: 10px; background: white;">
         <Carousel controls="{false}" dots="{false}">
             {#each carouselGames as carouselGame}
-                <div class="carousel-image-container bg-white col pb-5">
+                <div class="carousel-image-container bg-white col pb-5" style="max-height: 130px !important;">
                     <img src="{carouselGame.img}" class="carousel-image"/>
     <!--                <span class="text-center" style>{carouselGame.name}</span>-->
                 </div>

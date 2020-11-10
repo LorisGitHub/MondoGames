@@ -22,18 +22,15 @@
 <div class="p-10">
 
     <div style="border-bottom: 2px solid whitesmoke; border-top: 2px solid whitesmoke">
-        <Carousel controls="{false}" dots="{false}">
-            <div on:click="{() => onCarouselSelect('1')}" class="carousel-image-container">
-                <img src="https://placekitten.com/403" class="carousel-image"/>
+        <Carousel perPage={1} controls="{false}" dots="{false}">
+            <div class="carousel-image-container">
+                <img src="https://colormygeneva.ch/sites/default/files/jeudi-en-folie-tournoi-uno-autre-geneve-fevrier-2019-evenement-sortie-soiree.jpg" class="carousel-image"/>
             </div>
             <div class="carousel-image-container">
-                <img src="https://placekitten.com/400" class="carousel-image"/>
+                <img src="https://www.slate.fr/sites/default/files/styles/1060x523/public/monop_0.jpg" class="carousel-image"/>
             </div>
             <div class="carousel-image-container">
-                <img src="https://placekitten.com/401" class="carousel-image"/>
-            </div>
-            <div class="carousel-image-container">
-                <img src="https://placekitten.com/402" class="carousel-image"/>
+                <img src="https://www.leparisien.fr/resizer/LcwcXjZpZ-JTTU7ioLSQbaucBuA=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/leparisien/2LP5MWLMBG5ML3AT74R3WDSIFI.jpg" class="carousel-image"/>
             </div>
         </Carousel>
     </div>
