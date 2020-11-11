@@ -47,10 +47,10 @@
 <!--                    <span style="font-size: 12px; line-height: initial" class="ml-10">{currentGame_.price}</span>-->
 <!--                </div>-->
             </div>
-            {#if currentGame_.desc}
+            {#if currentGame_.description}
                 <div class="row mt-10" style="align-items: center">
                     <Icon class="material-icons">subject</Icon>
-                    <span style="font-size: 12px; line-height: initial" class="ml-10">{currentGame_.desc}</span>
+                    <span style="font-size: 12px; line-height: initial" class="ml-10">{currentGame_.description}</span>
                 </div>
             {/if}
         </Card>

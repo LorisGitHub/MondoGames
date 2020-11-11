@@ -27,7 +27,7 @@
     <div class="map-container">
         <Map lat={43.9} lon={4.85} zoom={7}>
             {#each allEvents as event}
-                <MapMarker on:click={() => onSelectEvent(event)} lat={event.adress.lat} lon={event.adress.lon} label={event.nom}/>
+                <MapMarker on:click={() => onSelectEvent(event)} lat={event.address.lat} lon={event.address.lon} label={event.name}/>
             {/each}
             <!--    <MapMarker lat={43.967911} lon={4.899947} label="Vedène"/>-->
         </Map>
@@ -38,10 +38,10 @@
             <a href="#/event">
                 <Card class="m-10 pb-5 pt-5" style="border-bottom: 1px solid lightgray" on:click={() => onSelectEvent(event)}>
                     <div class="row">
-                        <span style="font-size: 12px; font-weight: bold" class="ml-10">{event.nom}</span>
+                        <span style="font-size: 12px; font-weight: bold" class="ml-10">{event.name}</span>
                     </div>
                     <div class="row">
-                        <span style="font-size: 12px; line-height: initial" class="ml-10">{event.adress.name}, {event.adress.city}, {event.adress.zip}</span>
+                        <span style="font-size: 12px; line-height: initial" class="ml-10">{event.address.name}, {event.address.city}, {event.address.zip}</span>
                     </div>
                 </Card>
             </a>

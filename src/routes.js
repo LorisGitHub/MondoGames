@@ -6,7 +6,6 @@ import Shop from './components/shop/ShopPage.svelte'
 import ShopItem from './components/shop/ShopItemPage.svelte'
 import Signin from './components/login/SigninPage.svelte'
 import Signout from './components/login/SignoutPage.svelte'
-import Wild from './components/Wild.svelte'
 import NotFound from './components/NotFound.svelte'
 import Event from './components/events/EventItemPage.svelte'
 import Friends from './components/friends/FriendsPage.svelte'
@@ -26,11 +25,6 @@ export default {
     '/profil': Profil,
     '/signin': Signin,
     '/signout': Signout,
-
-    // Wildcard parameter
-    // Included twice to match both `/wild` (and nothing after) and `/wild/*` (with anything after)
-    '/wild': Wild,
-    '/wild/*': Wild,
 
     // Catch-all, must be last
     '*': NotFound,

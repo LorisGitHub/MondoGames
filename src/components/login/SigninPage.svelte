@@ -1,22 +1,28 @@
 <script lang="ts">
-    import { onMount, onDestroy } from 'svelte';
-    import Button, {Group, Label} from '@smui/button';
-    import Card, {Content, PrimaryAction, Media, MediaContent, Actions, ActionButtons, ActionIcons} from '@smui/card';
+    import Button, {Label} from '@smui/button';
+    import { profil } from '../../stores';
 
-    let login = '';
-    let password = '';
-
-    onMount(() => {
-    });
+    let backUrl = 'http://88.125.48.25:60001';
 
     function onValidForm(){
-        let log = document.getElementById("login").value;
-        let pwd = document.getElementById("password").value;
-        console.log("valid form", log, pwd);
-    }
-
-    function onCreateAccount(){
-        window.location.href = '#/signout';
+        let username = document.getElementById("login").value;
+        let password = document.getElementById("password").value;
+        const resGames = fetch(`${backUrl}/authenticate`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({username, password})
+        }).then(resp => {
+            resp.json().then(jwt => {
+                localStorage.setItem('Authorization', `JWT ${jwt[0].jwtToken}`);
+                localStorage.setItem('profil', JSON.stringify(jwt[1]));
+                profil.set(jwt[1]);
+                document.location.href = '#/';
+            });
+        }, reason => {
+            console.log('error while trying to log');
+        });
     }
 
 </script>
@@ -25,9 +31,11 @@
 
     <img src="favicon3.png" class="w30">
 
-    <input id="login" class="mt-50" type="text" placeholder="Login" value="{login}"/>
-    <input id="password" type="password" placeholder="Password" value="{password}"/>
+    <form class="mt-50" style="text-align: center">
+        <input id="login" type="text" placeholder="Login" autocomplete="username" value=""/>
+        <input id="password" type="password" placeholder="Password" autocomplete="current-password" value=""/>
+    </form>
 
     <Button color='primary' class="mt-20 w75" on:click={() => onValidForm()} variant="raised"><Label>Login</Label></Button>
-    <Button color='primary' class="w75" on:click={() => onCreateAccount()} variant="raised"><Label>Create account</Label></Button>
+    <Button href='#/signout' color='primary' class="w75" variant="raised"><Label>Create account</Label></Button>
 </div>

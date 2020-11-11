@@ -5,14 +5,16 @@ export interface Identifiable {
 }
 
 export interface User extends Identifiable{
-    pseudo: string,
-    nom: string,
-    prenom: string,
+    admin: boolean,
+    userName: string,
+    firstName: string,
+    lastName: string,
     country?: string,
     online: boolean,
-    point: number,
-    ddn: Date,
-    pp: string,
+    score: number,
+    birthdate: Date,
+    profilePicture: string,
+    friends: number[],
     guild?: number,
     adress?: Adress,
 }
@@ -29,13 +31,14 @@ export interface Game extends Identifiable{
 }
 
 export interface Event extends Identifiable{
-    nom: string,
-    img?: string,
-    desc: string,
+    name: string,
+    image?: string,
+    description: string,
     startDate: Date,
     endDate: Date,
-    adress: Adress,
+    address: Adress,
     gameId: number,
+    userId: number,
 }
 
 export interface Adress {

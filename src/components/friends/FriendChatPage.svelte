@@ -1,10 +1,9 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import List, {Item, Text} from '@smui/list';
-    import Card, {Content} from '@smui/card';
+    import List, {Item} from '@smui/list';
+    import Card from '@smui/card';
     import {User} from '../../models/app-model';
-    import Textfield, {Input, Textarea} from '@smui/textfield';
-    import CharacterCounter from '@smui/textfield/character-counter/index';
+    import Textfield from '@smui/textfield';
     import {currentFriend} from '../../stores.js';
 
     let currentFriend_ : User = null;
@@ -13,7 +12,6 @@
     onMount(() => {
         const subscription = currentFriend.subscribe(value => {
             currentFriend_ = value;
-            console.log(value);
         });
     });
 
@@ -72,8 +70,8 @@
 {#if currentFriend_}
     <div class="friend-chat-header p-0">
         <Item class="w100 pb-5 pt-5">
-            <img class="round-border m-0" style="height: 40px" src="{currentFriend_.pp}"/>
-            <span style="font-size: 12px;" class="ml-10 white">{currentFriend_.prenom} {currentFriend_.nom}</span><br>
+            <img class="round-border m-0" style="height: 40px" src="{currentFriend_.profilePicture}"/>
+            <span style="font-size: 12px;" class="ml-10 white">{currentFriend_.lastName} {currentFriend_.firstName}</span><br>
         </Item>
     </div>
 

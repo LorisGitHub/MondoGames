@@ -1,10 +1,8 @@
 <script lang="ts">
     import { onMount, onDestroy } from 'svelte';
     import Carousel from '@beyonk/svelte-carousel'
-    import Card, {Content, PrimaryAction, Media, MediaContent, Actions, ActionButtons, ActionIcons} from '@smui/card';
-    import Button, {Label} from '@smui/button';
+    import Card, {Content, PrimaryAction, Media, Actions, ActionButtons, ActionIcons} from '@smui/card';
     import IconButton, {Icon} from '@smui/icon-button';
-    import List, {Item, Text} from '@smui/list';
 
     let options = {
         cellAlign: 'left',
