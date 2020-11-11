@@ -2,12 +2,12 @@
     import { onMount } from 'svelte';
     import List, {Item, Text} from '@smui/list';
     import Card, {Content} from '@smui/card';
-    import {Friend} from '../../models/app-model';
+    import {User} from '../../models/app-model';
     import Textfield, {Input, Textarea} from '@smui/textfield';
     import CharacterCounter from '@smui/textfield/character-counter/index';
     import {currentFriend} from '../../stores.js';
 
-    let currentFriend_ : Friend = null;
+    let currentFriend_ : User = null;
     let valueTextareaCharCount = '';
 
     onMount(() => {

@@ -48,7 +48,7 @@
                 <span style="font-size: 12px; line-height: initial" class="ml-10">{currentEvent_.adress.name}, {currentEvent_.adress.city}, {currentEvent_.adress.zip}</span>
             </div>
         </Card>
-        <Button color='primary' class="mt-10 w100" on:click={() => onGoShop()} variant="raised"><Label>Voir le jeu</Label><Icon class="material-icons">remove_red_eye</Icon></Button>
+        <Button color='primary' class="mt-10 w100" on:click={() => onGoShop()} variant="raised"><Label>See on store</Label><Icon class="material-icons">remove_red_eye</Icon></Button>
 
     </div>
 {/if}

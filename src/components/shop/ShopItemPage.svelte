@@ -28,7 +28,7 @@
             </div>
         {/if}
         <Card class="w100 mt-10 p-10">
-            <h5 class="shop-item-title" style="margin: 20px 0 0">{currentGame_.nom}</h5>
+            <h5 class="shop-item-title" style="margin: 20px 0 0">{currentGame_.name}</h5>
             <div class="w100 mt-20 row" style="justify-content: space-between">
                 <div class="row w30 flex-center">
                     <Icon class="material-icons">bookmark</Icon>
@@ -54,7 +54,7 @@
                 </div>
             {/if}
         </Card>
-        <Button color='primary' class="mt-10 w100" on:click={() => onBuy} variant="raised"><Label>Acheter</Label><Icon class="material-icons">add_shopping_cart</Icon></Button>
+        <Button color='primary' class="mt-10 w100" on:click={() => onBuy} variant="raised"><Label>Buy</Label><Icon class="material-icons">add_shopping_cart</Icon></Button>
     </div>
 {/if}
 

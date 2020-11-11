@@ -5,12 +5,6 @@ export interface Identifiable {
 }
 
 export interface User extends Identifiable{
-    nom: string,
-    prenom: string,
-    ddn: Date,
-}
-
-export interface Friend extends Identifiable{
     pseudo: string,
     nom: string,
     prenom: string,
@@ -19,16 +13,19 @@ export interface Friend extends Identifiable{
     point: number,
     ddn: Date,
     pp: string,
+    guild?: number,
+    adress?: Adress,
 }
 
 export interface Game extends Identifiable{
-    nom: string,
-    desc?: string,
+    name: string,
+    description?: string,
     numPlayers: string,
     rating: number,
     price: number,
     type: string,
     img: string,
+    releaseDate: Date,
 }
 
 export interface Event extends Identifiable{

@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import { logged, games, friends, events } from './stores';
+    import { logged, games, friends, events, profil } from './stores';
     import routes from './routes'
     import Router from 'svelte-spa-router'
     import TopAppBar, {Row, Section, Title} from '@smui/top-app-bar'
@@ -9,88 +9,13 @@
     import List, {Item, Text, Graphic, Separator, Subheader} from '@smui/list';
     import {GameType} from './models/app-enum';
 
+    let backUrl = 'http://88.125.48.25:60001';
     let myDrawer;
     let myDrawerOpen = false;
-    let active = 'Gray Kittens';
 
     let isLogged: Boolean = false;
 
     onMount(() => {
-        games.set([
-              {
-                  id: 1,
-                  nom: 'Monopoly',
-                  price: 8,
-                  numPlayers: '2-6',
-                  type: GameType.Plateau,
-                  img: 'https://images-na.ssl-images-amazon.com/images/I/81qy%2BMXuxDL._AC_SL1392_.jpg',
-                  desc: 'It\'s the fast-dealing property trading game where players buy, sell, dream and scheme their way to riches. This version of the Monopoly game welcomes the Rubber Ducky, Tyrannosaurus Rex, and Penguin into its family of tokens. Choose your token, place it on GO! and roll the dice to own it all! There can be only one winner in the Monopoly game. Will it be you?',
-                  rating: 4.5,
-              },
-              {
-                  id: 2,
-                  nom: 'Jeu de l\'oie',
-                  price: 20,
-                  numPlayers: '2-4',
-                  type: GameType.Plateau,
-                  img: 'https://www.regles-de-jeux.com/wp-content/uploads/2012/11/regle-jeu-oie.jpg',
-                  rating: 4.5,
-              },
-              {
-                  id: 3,
-                  nom: 'Cluedo',
-                  price: 20,
-                  numPlayers: '3-8',
-                  type: GameType.Plateau,
-                  img: 'https://www.espritjeu.com/upload/image/cluedo-p-image-60570-grande.jpg',
-                  rating: 4.5,
-              },
-              {
-                  id: 4,
-                  nom: 'La bonne paye',
-                  price: 20,
-                  numPlayers: '2-8',
-                  type: GameType.Plateau,
-                  img: 'https://images-na.ssl-images-amazon.com/images/I/91-j8eztdnL._AC_SL1500_.jpg',
-                  rating: 4.5,
-              },
-              {
-                  id: 5,
-                  nom: 'Uno',
-                  price: 5,
-                  numPlayers: '2-4',
-                  type: GameType.Carte,
-                  img: 'https://cdn-ext.fanatical.com/production/product/original/b2e25f5e-a2cf-4d10-8698-d445ecf6640e.jpeg?w=1200',
-                  rating: 4.5,
-              },
-              {
-                  id: 6,
-                  nom: 'Puissance 4',
-                  price: 5,
-                  numPlayers: '2',
-                  type: GameType.Arcade,
-                  img: 'https://www.ludifolie.com/14057-thickbox_default/puissance-4.jpg',
-                  rating: 4.5,
-              },
-              {
-                  id: 7,
-                  nom: 'Attrape fantôme',
-                  price: 5,
-                  numPlayers: '2',
-                  type: GameType.Arcade,
-                  img: 'https://images-na.ssl-images-amazon.com/images/I/91Itw5nGbtL._AC_SX679_.jpg',
-                  rating: 4.5,
-              },
-              {
-                  id: 8,
-                  nom: 'Jumanji',
-                  price: 5,
-                  numPlayers: '2-6',
-                  type: GameType.Arcade,
-                  img: 'https://lagranderecre-lagranderecre-fr-storage.omn.proximis.com/Imagestorage/images/0/0/5d4d393a8bc27_6045933_JEU_DE_PLATEAU_JUMANJI_EDITION_RETRO_PK1_855547_1_.jpg',
-                  rating: 4.5,
-              },
-          ]);
         friends.set([
             {
                 nom: 'Gerard',
@@ -202,16 +127,64 @@
                 gameId: 3,
             },
         ]);
+        profil.set(            {
+            nom: 'Benoit',
+            prenom: 'Loris',
+            pseudo: 'Cheadle',
+            online: true,
+            point: 4000,
+            country: 'jap',
+            pp: 'https://cdn.discordapp.com/avatars/241989599470026765/0a2ba029253a2c04dc9a606d61fbd3ac.webp?size=128',
+            ddn: new Date(877185479000),
+            adress: {
+                name: '924 Rue du Cheval Blanc',
+                city: 'Vedène',
+                zip: 84270,
+                country: 'France',
+                lat: 43.967911,
+                lon: 4.899947,
+            },
+        });
 
+        getAllGames();
+        getAllUsers();
 
-        // const res = fetch(`https://jsonplaceholder.typicode.com/photos?_limit=20`).then(value => {
-        //     console.log(value.json());
-        // });
-
-        const subscription = logged.subscribe(value => {
-            isLogged = value;
+        const subscription = profil.subscribe(value => {
+            if(value){
+                isLogged = true;
+            }
         });
     });
+
+    function getAllGames(){
+        const resGames = fetch(`${backUrl}/open/Game/getAllGames`).then(value => {
+            value.json().then(data => {
+                games.set(data);
+            })
+        }, reason => {
+            console.log('error while getting games');
+        });
+    }
+
+    function getAllUsers(){
+        const resUsers = fetch(`${backUrl}/open/MondoUser/getAllUsers`).then(value => {
+            value.json().then(data => {
+                // users.set(data);
+            })
+        }, reason => {
+            console.log('error while getting users');
+        });
+    }
+
+    function getAllEvents(){
+        const resEvents = fetch(`${backUrl}/open/Events/getAllEvents`).then(value => {
+            value.json().then(data => {
+                // events.set(data);
+            })
+        }, reason => {
+            console.log('error  while getting events');
+        });
+    }
 
     function openDrawer(){
         if(isLogged){
@@ -222,12 +195,7 @@
     }
 
     function setActive(value) {
-        active = value;
         myDrawerOpen = false;
-    }
-
-    function goShop(){
-        window.location.href = '#/shop';
     }
 
     if ('serviceWorker' in navigator) {
@@ -239,7 +207,7 @@
 </script>
 
 <div class="top-app-bar-container flexor">
-    <Drawer variant="modal" style="width: 80%" bind:this={myDrawer} bind:open={myDrawerOpen}>
+    <Drawer variant="modal" style="width: 80%; background: #292a2b" bind:this={myDrawer} bind:open={myDrawerOpen}>
         <Header class="flex-center p-0 mt-20">
             <img class="round-border m-0" width="100px" src="https://cdn.discordapp.com/avatars/241989599470026765/0a2ba029253a2c04dc9a606d61fbd3ac.webp?size=128"/>
 <!--            <Row>
@@ -247,24 +215,24 @@
             </Row>-->
         </Header>
         <Content>
-            <List>
-                <Item href="javascript:void(0)" on:click={() => setActive('profile')} activated={active === 'profile'}>
-                    <Text>My profile</Text>
+            <List class="mt-20">
+                <Item style="border-bottom: 1px solid white" href="#/profil" on:click={() => setActive('profile')}>
+                    <Text class="white">My profile</Text>
                 </Item>
-                <Item href="javascript:void(0)" on:click={() => setActive('games')} activated={active === 'games'}>
-                    <Text>My games</Text>
+                <Item style="border-bottom: 1px solid white" href="javascript:void(0)" on:click={() => setActive('games')}>
+                    <Text class="white">My games</Text>
                 </Item>
-                <Item href="javascript:void(0)" on:click={() => setActive('friends')} activated={active === 'friends'}>
-                    <Text>My friends</Text>
+                <Item style="border-bottom: 1px solid white" href="javascript:void(0)" on:click={() => setActive('friends')}>
+                    <Text class="white">My friends</Text>
                 </Item>
-                <Item href="javascript:void(0)" on:click={() => setActive('events')} activated={active === 'events'}>
-                    <Text>My events</Text>
+                <Item style="border-bottom: 1px solid white" href="javascript:void(0)" on:click={() => setActive('events')}>
+                    <Text class="white">My events</Text>
                 </Item>
-                <Item href="javascript:void(0)" on:click={() => setActive('groups')} activated={active === 'groups'}>
-                    <Text>My groups</Text>
+                <Item style="border-bottom: 1px solid white" href="javascript:void(0)" on:click={() => setActive('groups')}>
+                    <Text class="white">My guild</Text>
                 </Item>
-                <Item href="javascript:void(0)" on:click={() => setActive('achievements')} activated={active === 'achievements'}>
-                    <Text>My achievements</Text>
+                <Item style="border-bottom: 1px solid white" href="javascript:void(0)" on:click={() => setActive('achievements')}>
+                    <Text class="white">My achievements</Text>
                 </Item>
             </List>
         </Content>
@@ -278,7 +246,7 @@
             </Section>
             <Section align="end" toolbar>
                 <IconButton class="material-icons m-0" aria-label="Download">search</IconButton>
-                <a href="#/signin"><IconButton class="material-icons m-0" aria-label="Login">account_circle</IconButton></a>
+                <IconButton href="#/signin" class="material-icons m-0" aria-label="Login">login</IconButton>
             </Section>
         </Row>
     </TopAppBar>
@@ -286,10 +254,10 @@
         <Router {routes} />
     </div>
     <ul class="app-navbar">
-        <li><a href="#/friends"><IconButton class="material-icons white m-0">people</IconButton></a></li>
-        <li><a href="#/leaderboard"><IconButton class="material-icons white m-0">star</IconButton></a></li>
-        <li><a href="#/"><IconButton class="material-icons white m-0">home</IconButton></a></li>
-        <li><a href="#/shop"><IconButton class="material-icons white m-0">shopping_cart</IconButton></a></li>
-        <li><a href="#/map"><IconButton class="material-icons white m-0">map</IconButton></a></li>
+        <li><IconButton href="#/friends" class="material-icons white m-0">people</IconButton></li>
+        <li><IconButton href="#/leaderboard" class="material-icons white m-0">star</IconButton></li>
+        <li><IconButton href="#/" class="material-icons white m-0">home</IconButton></li>
+        <li><IconButton href="#/shop" class="material-icons white m-0">shopping_cart</IconButton></li>
+        <li><IconButton href="#/map" class="material-icons white m-0">map</IconButton></li>
     </ul>
 </div>

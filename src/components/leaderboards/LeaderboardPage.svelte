@@ -3,11 +3,11 @@
     import Button, {Group, Label} from '@smui/button';
     import Icon from '@smui/icon-button';
     import List, {Item, Text} from '@smui/list';
-    import {Friend} from '../../models/app-model'
+    import {User} from '../../models/app-model'
     import {friends} from '../../stores.js';
 
-    let allFriends: Friend[] = [];
-    let filteredFriends: Friend[] = [];
+    let allFriends: User[] = [];
+    let filteredFriends: User[] = [];
 
     onMount(() => {
         const subscription = friends.subscribe(value => {

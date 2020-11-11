@@ -12,7 +12,16 @@
   <component name="ChangeListManager">
     <list default="true" id="ac0e0364-c4bb-4fa1-a8a1-ac957edd268a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/Home.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/events/EventItemPage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/events/EventItemPage.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/friends/FriendChatPage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/friends/FriendChatPage.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/friends/FriendsPage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/friends/FriendsPage.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/leaderboards/LeaderboardPage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/leaderboards/LeaderboardPage.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shop/ShopItemPage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shop/ShopItemPage.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shop/ShopPage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shop/ShopPage.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/app-enum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/app-enum.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/app-model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/app-model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,26 +44,26 @@
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/events" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/profile" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\loris\WebstormProjects\MondoGames\src\components\profile" />
+      <recent name="C:\Users\loris\WebstormProjects\MondoGames\src\components\events" />
+      <recent name="C:\Users\loris\WebstormProjects\MondoGames\src\components\login" />
+      <recent name="C:\Users\loris\WebstormProjects\MondoGames\public" />
+      <recent name="C:\Users\loris\WebstormProjects\MondoGames\public\assets\countryFlags" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\loris\WebstormProjects\MondoGames\public" />
       <recent name="C:\Users\loris\WebstormProjects\MondoGames\src" />
       <recent name="C:\Users\loris\WebstormProjects\MondoGames" />
       <recent name="C:\Users\loris\WebstormProjects\MondoGames\src\models" />
       <recent name="C:\Users\loris\WebstormProjects\MondoGames\src\components\friends" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\loris\WebstormProjects\MondoGames\src\components\events" />
-      <recent name="C:\Users\loris\WebstormProjects\MondoGames\src\components\login" />
-      <recent name="C:\Users\loris\WebstormProjects\MondoGames\public" />
-      <recent name="C:\Users\loris\WebstormProjects\MondoGames\public\assets\countryFlags" />
-      <recent name="C:\Users\loris\WebstormProjects\MondoGames\src\assets\countryFlags" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -100,7 +109,9 @@
       <workItem from="1604966316269" duration="646000" />
       <workItem from="1605000655367" duration="1652000" />
       <workItem from="1605003778352" duration="282000" />
-      <workItem from="1605017587268" duration="5837000" />
+      <workItem from="1605017587268" duration="5967000" />
+      <workItem from="1605033267021" duration="199000" />
+      <workItem from="1605103749539" duration="6022000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1602661366781</created>
@@ -228,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605023376315</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fix">
+      <created>1605023489488</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1605023489488</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,34 +277,34 @@
     <MESSAGE value="Real data, models&amp;enums, style" />
     <MESSAGE value="shop item page and implement store" />
     <MESSAGE value="friend list user page and shop page" />
-    <MESSAGE value="fix" />
     <MESSAGE value="Country icons, using store in page, restrict lateral menu to logged users" />
     <MESSAGE value="Refactor style, sign in &amp; out pages, etc" />
     <MESSAGE value="Page event, carousel accueil, etc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Page event, carousel accueil, etc" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="114" width="1022" height="812" key="CommitChangelistDialog2" timestamp="1605023374195">
+    <state x="585" y="114" width="1022" height="812" key="CommitChangelistDialog2" timestamp="1605023488591">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" width="1022" height="812" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605023374195" />
+    <state x="585" y="114" width="1022" height="812" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605023488591" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1604262780903">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604262780903" />
-    <state x="540" y="258" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1605023379843">
+    <state x="540" y="258" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1605023500562">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="540" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605023379843" />
+    <state x="540" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605023500562" />
     <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1602671662535" />
     <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604954504783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604954504783" />
-    <state x="656" y="61" width="1066" height="722" key="find.popup" timestamp="1605001199390">
+    <state x="656" y="61" width="1066" height="722" key="find.popup" timestamp="1605104497866">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="61" width="1066" height="722" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605001199390" />
+    <state x="656" y="61" width="1066" height="722" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605104497866" />
     <state x="744" y="420" key="git4idea.ui.GitStashDialog" timestamp="1604530047585">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -2,11 +2,11 @@
     import { onMount } from 'svelte';
     import Card, {Content} from '@smui/card';
     import List, {Item, Text} from '@smui/list';
-    import {Friend} from '../../models/app-model'
+    import {User} from '../../models/app-model'
     import {currentFriend, friends} from '../../stores.js';
 
-    let allFriends: Friend[] = [];
-    let allOnlineFriends: Friend[] = [];
+    let allFriends: User[] = [];
+    let allOnlineFriends: User[] = [];
 
     onMount(() => {
         const subscription = friends.subscribe(value => {
@@ -23,7 +23,7 @@
         });
     });
 
-    function onSelectFriend(item: Friend) {
+    function onSelectFriend(item: User) {
         currentFriend.set(item);
     }
 </script>

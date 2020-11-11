@@ -1,6 +1,7 @@
 import Home from './components/home/Home.svelte'
 import Map from './components/map/MapPage.svelte'
 import Leaderboard from './components/leaderboards/LeaderboardPage.svelte'
+import Profil from './components/user/ProfilPage.svelte'
 import Shop from './components/shop/ShopPage.svelte'
 import ShopItem from './components/shop/ShopItemPage.svelte'
 import Signin from './components/login/SigninPage.svelte'
@@ -22,6 +23,7 @@ export default {
     '/leaderboard': Leaderboard,
     '/shop': Shop,
     '/shop/item': ShopItem,
+    '/profil': Profil,
     '/signin': Signin,
     '/signout': Signout,
 

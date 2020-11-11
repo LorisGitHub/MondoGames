@@ -1,7 +1,7 @@
 export enum GameType {
     Arcade = 'Arcade',
-    Societe = 'Societe',
-    Carte = 'Carte',
-    Strategie = 'Strategie',
-    Plateau = 'Plateau',
+    Society = 'Society',
+    Cards = 'Cards',
+    Strategy = 'Strategy',
+    Board = 'Board',
 }

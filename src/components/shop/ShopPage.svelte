@@ -87,7 +87,7 @@
                             <Media style="background-image: url({game.img});" aspectRatio="16x9">
                             </Media>
                             <Content style="padding: 5px; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
-                                {game.nom}<br>
+                                {game.name}<br>
                                 {game.price}€
                             </Content>
                         </Card>
