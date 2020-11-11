@@ -46,7 +46,9 @@
     }
 
     function getAllUsers(){
-        const resUsers = fetch(`${backUrl}/open/MondoUser/getAllUsers`).then(value => {
+        const resUsers = fetch(`${backUrl}/open/MondoUser/getAllUsers`, {
+            'content-encoding': 'gzip, compress, br'
+        }).then(value => {
             value.json().then(data => {
                 friends.set(data);
             })
@@ -56,7 +58,9 @@
     }
 
     function getAllEvents(){
-        const resEvents = fetch(`${backUrl}/open/Event/getAllEvents`).then(value => {
+        const resEvents = fetch(`${backUrl}/open/Event/getAllEvents`, {
+            'content-encoding': 'gzip, compress, br'
+        }).then(value => {
             value.json().then(data => {
                 data.forEach(event => {
                     event.address = JSON.parse(event.address);
@@ -100,19 +104,19 @@
                 <Item style="border-bottom: 1px solid white" href="#/profil" on:click={() => setActive('profile')}>
                     <Text class="white">My profile</Text>
                 </Item>
-                <Item style="border-bottom: 1px solid white" href="javascript:void(0)" on:click={() => setActive('games')}>
+                <Item style="border-bottom: 1px solid white" href="#/myGames" on:click={() => setActive('games')}>
                     <Text class="white">My games</Text>
                 </Item>
                 <Item style="border-bottom: 1px solid white" href="javascript:void(0)" on:click={() => setActive('friends')}>
                     <Text class="white">My friends</Text>
                 </Item>
-                <Item style="border-bottom: 1px solid white" href="javascript:void(0)" on:click={() => setActive('events')}>
+                <Item style="border-bottom: 1px solid white" href="#/map" on:click={() => setActive('events')}>
                     <Text class="white">My events</Text>
                 </Item>
-                <Item style="border-bottom: 1px solid white" href="javascript:void(0)" on:click={() => setActive('groups')}>
+                <Item style="border-bottom: 1px solid white" href="#/guild" on:click={() => setActive('groups')}>
                     <Text class="white">My guild</Text>
                 </Item>
-                <Item style="border-bottom: 1px solid white" href="javascript:void(0)" on:click={() => setActive('achievements')}>
+                <Item style="border-bottom: 1px solid white" href="#/achievements" on:click={() => setActive('achievements')}>
                     <Text class="white">My achievements</Text>
                 </Item>
             </List>

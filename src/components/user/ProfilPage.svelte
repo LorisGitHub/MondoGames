@@ -60,20 +60,20 @@
             <h5 class="shop-item-title" style="margin: 20px 0 0">{profil_.firstName} {profil_.lastName}</h5>
             <div class="row mt-10" style="align-items: center">
                 <Icon class="material-icons">calendar_today</Icon>
-                <span style="font-size: 12px; line-height: initial" class="ml-10">{ddnString}</span>
+                <span style="font-size: 12px; line-height: initial" class="ml-10">Born the {ddnString}</span>
             </div>
             <div class="row mt-10" style="align-items: center">
                 <Icon class="material-icons">games</Icon>
-                <span style="font-size: 12px; line-height: initial" class="ml-10">Monopoly, Uno</span>
+                <span style="font-size: 12px; line-height: initial" class="ml-10">Favorites games: Monopoly, Uno</span>
             </div>
             <div class="row mt-10" style="align-items: center">
                 <Icon class="material-icons">groups</Icon>
                 <span style="font-size: 12px; line-height: initial" class="ml-10">CERI Guild</span>
             </div>
-            {#if profil_.adress}
+            {#if profil_.address}
                 <div class="row mt-10" style="align-items: center">
                     <Icon class="material-icons">room</Icon>
-                    <span style="font-size: 12px; line-height: initial" class="ml-10">{profil_.adress.name}, {profil_.adress.city}, {profil_.adress.zip}</span>
+                    <span style="font-size: 12px; line-height: initial" class="ml-10">{profil_.address.name}, {profil_.address.city}, {profil_.address.zip}</span>
                 </div>
             {/if}
         </Card>

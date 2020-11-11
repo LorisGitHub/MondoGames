@@ -16,7 +16,7 @@ export interface User extends Identifiable{
     profilePicture: string,
     friends: number[],
     guild?: number,
-    adress?: Adress,
+    address?: Adress,
 }
 
 export interface Game extends Identifiable{
