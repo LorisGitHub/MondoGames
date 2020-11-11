@@ -31,7 +31,7 @@
 
     <img src="favicon3.png" class="w30">
 
-    <form class="mt-50" style="text-align: center">
+    <form class="mt-50 text-center">
         <input id="login" type="text" placeholder="Login" autocomplete="username" value=""/>
         <input id="password" type="password" placeholder="Password" autocomplete="current-password" value=""/>
     </form>
