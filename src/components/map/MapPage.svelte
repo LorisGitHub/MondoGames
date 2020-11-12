@@ -29,7 +29,6 @@
             {#each allEvents as event}
                 <MapMarker on:click={() => onSelectEvent(event)} lat={event.address.lat} lon={event.address.lon} label={event.name}/>
             {/each}
-            <!--    <MapMarker lat={43.967911} lon={4.899947} label="Vedène"/>-->
         </Map>
     </div>
 
@@ -47,4 +46,6 @@
             </a>
         {/each}
     </List>
+{:else}
+    <h4 class="text-center white">No events to show</h4>
 {/if}

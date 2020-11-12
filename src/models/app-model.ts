@@ -49,3 +49,11 @@ export interface Adress {
     lon: number,
     lat: number,
 }
+
+
+export interface Message {
+    text: string,
+    time: Date,
+    from: number,
+    to: number,
+}

@@ -48,17 +48,21 @@
     <Button color='primary' class="m-0" on:click={() => onSelectCategorie('world')} variant="raised"><Label>Amis</Label></Button>
 </Group>
 
-<List class="p-0 mt-20 white ml-10 mr-10">
-    {#each filteredFriends as friend, i}
-        <div class="w100 row flex-center" style="border-bottom: 1px solid lightgray; padding: 5px 0 5px;">
-            <h2 class="mr-10" style="color: {i === 0 ? '#daa520': i === 1 ? '#C0C0C0': i === 2 ? '#B08D57':'white'}">{i+1}</h2>
-            <img class="round-border m-0" style="height: 50px" src="{friend.profilePicture}"/>
-            <div style="width: -webkit-fill-available">
-                <Text class="ml-10">{friend.userName}</Text>
+{#if allFriends && allFriends.length > 0 }
+    <List class="p-0 mt-20 white ml-10 mr-10">
+        {#each filteredFriends as friend, i}
+            <div class="w100 row flex-center" style="border-bottom: 1px solid lightgray; padding: 5px 0 5px;">
+                <h2 class="mr-10" style="color: {i === 0 ? '#daa520': i === 1 ? '#C0C0C0': i === 2 ? '#B08D57':'white'}">{i+1}</h2>
+                <img class="round-border m-0" style="height: 50px" src="{friend.profilePicture}"/>
+                <div style="width: -webkit-fill-available">
+                    <Text class="ml-10">{friend.userName}</Text>
+                </div>
+                <div style="width: 50px; display: flex; justify-content: flex-end; position: relative; right: 20px;">
+                    <img style="height: 20px" src="assets/countryFlags/{friend.country}.svg"/>
+                </div>
             </div>
-            <div style="width: 50px; display: flex; justify-content: flex-end; position: relative; right: 20px;">
-                <img style="height: 20px" src="assets/countryFlags/{friend.country}.svg"/>
-            </div>
-        </div>
-    {/each}
-</List>
+        {/each}
+    </List>
+{:else}
+    <h4 class="text-center white">Nothing to show</h4>
+{/if}

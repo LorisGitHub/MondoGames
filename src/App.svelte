@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import { games, friends, events, profil } from './stores';
+    import { games, friends, events, profil, messages } from './stores';
     import routes from './routes'
     import Router from 'svelte-spa-router'
     import TopAppBar, {Row, Section, Title} from '@smui/top-app-bar'
@@ -20,6 +20,51 @@
         if(profilStorage != null){
             profil.set(JSON.parse(profilStorage));
         }
+
+        messages.set([
+            {
+                from: 1,
+                to: 2,
+                time: new Date(),
+                text: 'Bonjour'
+            },
+            {
+                from: 1,
+                to: 2,
+                time: new Date(),
+                text: 'ceci est'
+            },
+            {
+                from: 2,
+                to: 1,
+                time: new Date(),
+                text: 'un test'
+            },
+            {
+                from: 1,
+                to: 2,
+                time: new Date(),
+                text: 'de la '
+            },
+            {
+                from: 2,
+                to: 1,
+                time: new Date(),
+                text: 'messagerie'
+            },
+            {
+                from: 2,
+                to: 1,
+                time: new Date(),
+                text: 'entrez un message'
+            },
+            {
+                from: 1,
+                to: 2,
+                time: new Date(),
+                text: 'pour l`\'ajouter'
+            },
+        ]);
 
         getAllGames();
         getAllUsers();
