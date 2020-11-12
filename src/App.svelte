@@ -33,7 +33,13 @@
                 from: 1,
                 to: 2,
                 time: new Date(1604913841000),
-                text: 'ceci est'
+                text: 'ceci'
+            },
+            {
+                from: 1,
+                to: 2,
+                time: new Date(1604913841000),
+                text: 'est'
             },
             {
                 from: 2,
