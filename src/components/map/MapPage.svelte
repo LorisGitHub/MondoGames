@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import { onMount } from 'svelte';
     import {events, currentEvent} from '../../stores.js';
     import {Event} from '../../models/app-model'
@@ -25,6 +25,7 @@
 
 {#if allEvents && allEvents.length > 0}
     <div class="map-container">
+        <!-- TODO: remplacer les coordonnées par les coordonnées de l'utilisateur ( comment faire sans cordova ? ) -->
         <Map lat={43.9} lon={4.85} zoom={7}>
             {#each allEvents as event}
                 <MapMarker on:click={() => onSelectEvent(event)} lat={event.address.lat} lon={event.address.lon} label={event.name}/>

@@ -6,6 +6,7 @@
     import {currentGame, games} from '../../stores.js';
     import { onMount } from 'svelte';
 
+    // TODO: les jeux à afficher dans le carousel seront signalé par un futur flag 'toPromote' dans le type Game
     let carouselGames = [
         {
             name: 'The Crew',

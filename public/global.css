@@ -98,11 +98,10 @@ button:focus {
 	position: sticky;
 	bottom: 0;
 	width: 100%;
-	padding: 10px 0 0;
 	margin: 0;
 	background-color: white;
 	box-shadow: 0px 5px 5px 5px rgba(0,0,0,.2);
-	border-radius: 5px;
+	border-radius: 5px 5px 0 0;
 }
 
 .top-app-bar-container {

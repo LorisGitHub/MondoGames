@@ -54,7 +54,7 @@
     <div class="friend-chat-header p-0">
         <Item class="w100 pb-5 pt-5">
             <img class="round-border m-0" style="height: 40px" src="{currentFriend_.profilePicture}"/>
-            <span style="font-size: 12px;" class="ml-10 white">{currentFriend_.lastName} {currentFriend_.firstName}</span><br>
+            <span style="font-size: 12px;" class="ml-10 white">{currentFriend_.userName}</span><br>
         </Item>
     </div>
 
@@ -65,7 +65,7 @@
                     <Card class="{message.from === myProfileId ? 'bg-lightblue w100 mb-10':'w100 mb-10'}">
                         <Item class="pb-5 pt-5" style="border-bottom: 1px solid lightgray; width: auto">
                             <span style="position: absolute; font-style: italic; font-size: 10px; bottom: -4px; right: 4px;">{getMessageDate(message.time)}</span>
-                            <span style="font-size: 12px; font-family: cursive" class="ml-10">{message.text}</span>
+                            <span style="font-size: 12px" class="ml-10">{message.text}</span>
                         </Item>
                     </Card>
                 </div>

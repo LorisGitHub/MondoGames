@@ -8,6 +8,7 @@
     import Drawer, {Content, Header, Scrim} from '@smui/drawer';
     import List, {Item, Text} from '@smui/list';
 
+    // TODO: a switch avec une constante déclaré (pour l'instant dans app-enum)
     let backUrl = 'http://88.125.48.25:60001';
     let myDrawer;
     let myDrawerOpen = false;
@@ -25,43 +26,43 @@
             {
                 from: 1,
                 to: 2,
-                time: new Date(),
+                time: new Date(1604910241000),
                 text: 'Bonjour'
             },
             {
                 from: 1,
                 to: 2,
-                time: new Date(),
+                time: new Date(1604913841000),
                 text: 'ceci est'
             },
             {
                 from: 2,
                 to: 1,
-                time: new Date(),
+                time: new Date(1604914561000),
                 text: 'un test'
             },
             {
                 from: 1,
                 to: 2,
-                time: new Date(),
+                time: new Date(1604932561000),
                 text: 'de la '
             },
             {
                 from: 2,
                 to: 1,
-                time: new Date(),
+                time: new Date(1605018963000),
                 text: 'messagerie'
             },
             {
                 from: 2,
                 to: 1,
-                time: new Date(),
+                time: new Date(1605040563000),
                 text: 'entrez un message'
             },
             {
                 from: 1,
                 to: 2,
-                time: new Date(),
+                time: new Date(1605089703000),
                 text: 'pour l`\'ajouter'
             },
         ]);
@@ -129,6 +130,13 @@
         myDrawerOpen = false;
     }
 
+    function signOut(){
+        isLogged = false;
+        profil.set(null);
+        localStorage.removeItem('profil');
+        localStorage.removeItem('Authorization');
+    }
+
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('/sw.js');
@@ -178,6 +186,8 @@
                 <IconButton class="material-icons m-0" aria-label="Download">search</IconButton>
                 {#if !isLogged}
                     <IconButton href="#/signin" class="material-icons m-0" aria-label="Login">login</IconButton>
+                {:else}
+                    <IconButton on:click={() => signOut()} class="material-icons m-0" aria-label="Login">power_settings_new</IconButton>
                 {/if}
             </Section>
         </Row>

@@ -53,8 +53,8 @@
                     <Card class="p-5 mt-5 row" style="border-bottom: 1px solid lightgray" on:click={() => onSelectFriend(friend)}>
                         <img class="round-border m-0" style="height: 50px" src="{friend.profilePicture}"/>
                         <div class="col">
-                            <span style="font-size: 12px; font-weight: bold" class="ml-10">{friend.lastName} {friend.firstName}</span>
-                            <span style="font-size: 12px; font-family: cursive" class="ml-10">Salut à tous</span>
+                            <span style="font-size: 12px; font-weight: bold" class="ml-10">{friend.userName}</span>
+                            <span style="font-size: 12px" class="ml-10">Salut à tous</span>
                         </div>
                     </Card>
                 </a>

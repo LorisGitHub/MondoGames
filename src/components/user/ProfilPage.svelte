@@ -57,7 +57,11 @@
             </div>
         {/if}
         <Card class="w100 mt-10 p-10">
-            <h5 class="shop-item-title" style="margin: 20px 0 0">{profil_.firstName} {profil_.lastName}</h5>
+            <h5 class="shop-item-title" style="margin: 20px 0 0">{profil_.userName}</h5>
+            <div class="row mt-20" style="align-items: center">
+                <Icon class="material-icons">assignment_ind</Icon>
+                <span style="font-size: 12px; line-height: initial" class="ml-10">Full name: {profil_.firstName} {profil_.lastName}</span>
+            </div>
             <div class="row mt-10" style="align-items: center">
                 <Icon class="material-icons">calendar_today</Icon>
                 <span style="font-size: 12px; line-height: initial" class="ml-10">Born the {ddnString}</span>
